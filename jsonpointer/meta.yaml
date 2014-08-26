@@ -1,0 +1,28 @@
+
+package:
+  name: jsonpointer
+  version: "1.4"
+
+
+source:
+  fn: jsonpointer-1.4.tar.gz
+  url: https://pypi.python.org/packages/source/j/jsonpointer/jsonpointer-1.4.tar.gz
+  md5: 849debe5e5a55af4d1a641a90e41d525
+
+build:
+  number: 1
+
+  entry_points: 
+
+requirements:
+  build:
+    - python
+
+  run:
+    - python
+
+
+about:
+  home: https://github.com/stefankoegl/python-json-pointer
+  license: Modified BSD License
+  summary: Identify specific nodes in a JSON document
