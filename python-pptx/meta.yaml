@@ -1,26 +1,25 @@
 package:
-  name: internetarchive
-  version: !!str 0.7.1
+  name: python-pptx
+  version: !!str 0.4.2
 
 source:
-  fn: internetarchive-0.7.1.tar.gz
-  url: https://pypi.python.org/packages/source/i/internetarchive/internetarchive-0.7.1.tar.gz
-  md5: 076c7b048de35c81a9a2842053150224
+  fn: python-pptx-0.4.2.tar.gz
+  url: https://pypi.python.org/packages/source/p/python-pptx/python-pptx-0.4.2.tar.gz
+  md5: 897370f62a293501bd50bf726ce44329
 #  patches:
    # List any patch files here
    # - fix.patch
 
-build:
+# build:
   #preserve_egg_dir: True
-  entry_points:
+  #entry_points:
     # Put any entry points (scripts to be generated automatically) here. The
     # syntax is module:function.  For example
     #
-    # - internetarchive = internetarchive:main
+    # - python-pptx = python-pptx:main
     #
-    # Would create an entry point called internetarchive that calls internetarchive.main()
+    # Would create an entry point called python-pptx that calls python-pptx.main()
 
-    - ia = internetarchive.iacli.ia:main
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
@@ -30,35 +29,31 @@ requirements:
   build:
     - python
     - setuptools
-    - requests
-    - jsonpatch
-    - pytest
-    - docopt
-    - pyyaml
-    - clint
-    - six
+    - lxml
+    - pillow
 
   run:
     - python
-    - requests
-    - jsonpatch
-    - pytest
-    - docopt
-    - pyyaml
-    - clint
-    - six
+    - lxml
+    - pillow
 
 test:
   # Python imports
   imports:
-    - internetarchive
-    - internetarchive.iacli
+    - pptx
+    - pptx.enum
+    - pptx.dml
+    - pptx.oxml
+    - pptx.opc
+    - pptx.shapes
+    - pptx.oxml.shapes
+    - pptx.parts
+    - pptx.oxml.dml
 
-  commands:
+  #commands:
     # You can put test commands to be run here.  Use this to test that the
     # entry points work.
 
-    - ia --help
 
   # You can also put a file called run_test.py in the recipe that will be run
   # at test time.
@@ -68,9 +63,9 @@ test:
     # - nose
 
 about:
-  home: https://github.com/jjjake/ia-wrapper
-  license: GNU Affero General Public License v3
-  summary: 'A python interface to archive.org.'
+  home: http://github.com/scanny/python-pptx
+  license: MIT License
+  summary: 'Generate and manipulate Open XML PowerPoint (.pptx) files'
 
 # See
 # http://docs.continuum.io/conda/build.html for

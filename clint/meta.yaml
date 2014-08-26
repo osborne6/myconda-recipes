@@ -1,26 +1,25 @@
 package:
-  name: internetarchive
-  version: !!str 0.7.1
+  name: clint
+  version: !!str 0.3.7
 
 source:
-  fn: internetarchive-0.7.1.tar.gz
-  url: https://pypi.python.org/packages/source/i/internetarchive/internetarchive-0.7.1.tar.gz
-  md5: 076c7b048de35c81a9a2842053150224
+  fn: clint-0.3.7.tar.gz
+  url: https://pypi.python.org/packages/source/c/clint/clint-0.3.7.tar.gz
+  md5: 4379c034b978e1542e024de3566ea222
 #  patches:
    # List any patch files here
    # - fix.patch
 
-build:
+# build:
   #preserve_egg_dir: True
-  entry_points:
+  #entry_points:
     # Put any entry points (scripts to be generated automatically) here. The
     # syntax is module:function.  For example
     #
-    # - internetarchive = internetarchive:main
+    # - clint = clint:main
     #
-    # Would create an entry point called internetarchive that calls internetarchive.main()
+    # Would create an entry point called clint that calls clint.main()
 
-    - ia = internetarchive.iacli.ia:main
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
@@ -30,35 +29,24 @@ requirements:
   build:
     - python
     - setuptools
-    - requests
-    - jsonpatch
-    - pytest
-    - docopt
-    - pyyaml
-    - clint
-    - six
+    - args
 
   run:
     - python
-    - requests
-    - jsonpatch
-    - pytest
-    - docopt
-    - pyyaml
-    - clint
-    - six
+    - args
 
 test:
   # Python imports
   imports:
-    - internetarchive
-    - internetarchive.iacli
+    - clint.textui
+    - clint
+    - clint.packages.colorama
+    - clint.packages
 
-  commands:
+  #commands:
     # You can put test commands to be run here.  Use this to test that the
     # entry points work.
 
-    - ia --help
 
   # You can also put a file called run_test.py in the recipe that will be run
   # at test time.
@@ -68,9 +56,9 @@ test:
     # - nose
 
 about:
-  home: https://github.com/jjjake/ia-wrapper
-  license: GNU Affero General Public License v3
-  summary: 'A python interface to archive.org.'
+  home: https://github.com/kennethreitz/clint
+  license: 
+  summary: 'Python Command-line Application Tools'
 
 # See
 # http://docs.continuum.io/conda/build.html for
