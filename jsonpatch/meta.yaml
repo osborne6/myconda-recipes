@@ -1,0 +1,27 @@
+package:
+  name: jsonpatch
+  version: "1.7"
+
+source:
+  fn: jsonpatch-1.7.tar.gz
+  url: https://pypi.python.org/packages/source/j/jsonpatch/jsonpatch-1.7.tar.gz
+  md5: 2a25c0481d1428bd9beb0ef7ec3e81a7
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - python
+    - jsonpointer
+
+  run:
+    - python
+    - jsonpointer
+
+
+about:
+  home: https://github.com/stefankoegl/python-json-patch
+  license: Modified BSD License
+  summary: Library to apply JSON Patches according to RFC 6902
+
