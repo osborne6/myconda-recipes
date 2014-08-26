@@ -36,7 +36,7 @@ test:
   # Python imports
   imports:
     - bs4
-    - beautifulsoup4
+    #- beautifulsoup4
     - bs4.builder
     - bs4.tests
 
